@@ -1,9 +1,8 @@
-import React, { ReactElement, useCallback, useState } from "react";
+import { ReactElement, useCallback } from "react";
+import { FaTrash } from "react-icons/fa";
+import { Column } from "react-table";
 import AdminSidebar from "../components/AdminSidebar";
 import TableHOC from "../components/TableHOC";
-import { Column } from "react-table";
-import { Link } from "react-router-dom";
-import { FaTrash } from "react-icons/fa";
 
 interface DataType {
   avatar: ReactElement;
@@ -71,9 +70,9 @@ const arr: DataType[] = [
   },
 ];
 export default function Customers() {
-  const [data, setData] = useState<DataType[]>(arr);
+  // const [data, setData] = useState<DataType[]>(arr);
   const Table = useCallback(() => {
-    return TableHOC<DataType>(columns, data, "customerBox", "Customers");
+    return TableHOC<DataType>(columns, arr, "customerBox", "Customers");
   }, []);
 
   return (
