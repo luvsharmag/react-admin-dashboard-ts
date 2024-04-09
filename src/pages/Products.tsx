@@ -1,4 +1,4 @@
-import { ReactElement, useCallback, useState } from "react";
+import { ReactElement, useCallback } from "react";
 import { FaPlus } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { Column } from "react-table";
@@ -97,9 +97,9 @@ const arr: DataType[] = [
 ];
 
 export default function Products() {
-  const [data, setData] = useState<DataType[]>(arr);
+  // const [data, setData] = useState<DataType[]>(arr);
   const Table = useCallback(() => {
-    return TableHOC<DataType>(columns, data, "productBox", "Products");
+    return TableHOC<DataType>(columns, arr, "productBox", "Products");
   }, []);
   return (
     <div className="adminContainer">

@@ -1,7 +1,7 @@
-import React, { ReactElement, useCallback, useState } from "react";
-import AdminSidebar from "../components/AdminSidebar";
-import { Column } from "react-table";
+import { ReactElement, useCallback } from "react";
 import { Link } from "react-router-dom";
+import { Column } from "react-table";
+import AdminSidebar from "../components/AdminSidebar";
 import TableHOC from "../components/TableHOC";
 
 
@@ -60,9 +60,9 @@ const arr: DataType[] = [
   },
 ];
 export default function Transaction() {
-  const [data,setData] = useState<DataType[]>(arr);
+  // const [data,setData] = useState<DataType[]>(arr);
   const Table = useCallback(()=>{
-    return TableHOC<DataType>(columns,data,"transactionBox","Transactions");
+    return TableHOC<DataType>(columns,arr,"transactionBox","Transactions");
   },[]);
   return (
     <div className="adminContainer">

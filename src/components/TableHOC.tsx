@@ -1,14 +1,13 @@
-import React from "react";
 import {
   AiOutlineSortAscending,
   AiOutlineSortDescending,
 } from "react-icons/ai";
 import {
-  useSortBy,
   Column,
-  useTable,
   TableOptions,
   usePagination,
+  useSortBy,
+  useTable,
 } from "react-table";
 
 function TableHOC<T extends Object>(
